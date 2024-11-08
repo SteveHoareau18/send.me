@@ -1,4 +1,4 @@
-package src.main.java.fr.sendme.controller;
+package fr.sendme.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
