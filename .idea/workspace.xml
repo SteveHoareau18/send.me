@@ -4,38 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ccc3017-9643-413f-86ce-b3e0e31e488b" name="Changes" comment="add READ.ME">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/sendme_back.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/README.MD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/src/main/java/fr/sendme/SendmeApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/src/main/java/fr/sendme/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/src/test/java/fr/sendme/BackApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_back/src/test/java/fr/sendme/SendmeApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sendme_front" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/README.MD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/java/fr/sendme/SendmeApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/test/java/fr/sendme/SendmeApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="9ccc3017-9643-413f-86ce-b3e0e31e488b" name="Changes" comment="add READ.ME" />
     <list id="2ec32195-52ac-4cb7-8152-d4b21f6ddc1e" name="Changes by nassi" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.SendmeApplication (1).executor": "Run",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "hotfix/refactor-for-back-front",
+    "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-21",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/hoare/Desktop/sendme/sendme_front",
@@ -176,7 +145,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731063722646</updated>
       <workItem from="1731063723718" duration="6560000" />
-      <workItem from="1731074944059" duration="372000" />
+      <workItem from="1731074944059" duration="779000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
