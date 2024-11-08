@@ -83,7 +83,7 @@ services:
       - 1.1.1.1
       - 1.0.0.1
     volumes:
-      - C:\Users\hoare\Desktop\sendme-club:/var/www/html/sendme
+      - ${PATH}\sendme:/home/back
   database:
     container_name: sendme_db
     image: postgres:${POSTGRES_VERSION:-16}-alpine
