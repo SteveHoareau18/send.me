@@ -1,32 +1,22 @@
-FROM httpd:alpine3.20@sha256:741553a657df26d0adb4e6403c0da1700fbb0dd4e0544a8e01eeea3e7a4c592b
+# Utilise une image avec Java 21
+FROM openjdk:21-jdk-slim
 
 USER root
 
-# Update the system
-RUN apk update
+# Définit le répertoire de travail
+WORKDIR /app
 
-# Extract PHP source and install extensions
-RUN apk add --no-cache \
-    git \
-    openrc \
-    supervisor \
-    libpq-dev \
-    libzip-dev \
-    curl \
-    openjdk21
+# Copie les fichiers Maven pour la mise en cache des dépendances
+COPY pom.xml ./
+COPY src ./src
 
-# Set the timezone
-ENV TZ=UTC+1
-RUN apk add --no-cache tzdata && ln -sf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
-# Club application installation
-RUN git clone https://github.com/SteveHoareau18/send.me.git /home/back
-
-RUN mkdir /usr/tmp
-RUN cd /usr/tmp/
-
-
-# Set the working directory
-WORKDIR /home/back
+# Création d'un répertoire temporaire pour éviter le problème de suppression
+RUN mkdir -p /tmp/sendme_build
 
 EXPOSE 8000
+
+# Exécute la commande de compilation et spécifie un répertoire cible temporaire
+CMD ["./mvnw", "spring-boot:run"]
+
+# Lancer l'application (lorsque le build réussit)
+# CMD ["java", "-jar", "/tmp/sendme_build/sendme.jar"]
