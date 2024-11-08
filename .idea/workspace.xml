@@ -4,12 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ccc3017-9643-413f-86ce-b3e0e31e488b" name="Changes" comment="add READ.ME" />
+    <list default="true" id="9ccc3017-9643-413f-86ce-b3e0e31e488b" name="Changes" comment="add READ.ME">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sendme_back/src/main/java/fr/sendme/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sendme_front/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendme_back/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendme_back/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendme_back/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendme_back/src/main/java/fr/sendme/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/src/main/java/fr/sendme/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendme_back/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <list id="2ec32195-52ac-4cb7-8152-d4b21f6ddc1e" name="Changes by nassi" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
   </component>
   <component name="ComposerSettings">
     <execution />
@@ -53,27 +76,33 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Docker.compose.yaml: Compose Deployment.executor": "Run",
+    "Docker.sendme_back/Dockerfile.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "HTTP Request.sendme-endpoints | #1.executor": "Run",
+    "Maven.sendme [clean,install].executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.SendmeApplication (1).executor": "Run",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "feature/config-backend",
     "jdk.selected.JAVA_MODULE": "corretto-21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/hoare/Desktop/sendme/sendme_front",
+    "last_opened_file_path": "C:/Users/hoare/Desktop/sendme/sendme_back",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.44712645",
-    "settings.editor.selected.configurable": "AndroidSdkUpdater",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "settings.editor.splitter.proportion": "0.21323529",
     "show.migrate.to.gradle.popup": "false",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
@@ -84,12 +113,23 @@
       <recent name="C:\Users\hoare\Desktop\sendme" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
   <component name="RunManager" selected="Docker.compose.yaml: Compose Deployment">
+    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="sendme-endpoints | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/sendme-endpoints.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
     <configuration name="SendmeApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="sendme_back" />
+      <module name="sendme" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="src.main.java.fr.sendme.SendmeApplication" />
       <extension name="coverage">
         <pattern>
@@ -114,6 +154,12 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -122,9 +168,20 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="sendme_back/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="sendme_back/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Docker.compose.yaml: Compose Deployment" />
+        <item itemvalue="Docker.sendme_back/Dockerfile" />
+        <item itemvalue="HTTP Request.generated-requests | #3" />
+        <item itemvalue="HTTP Request.sendme-endpoints | #1" />
         <item itemvalue="Spring Boot.SendmeApplication (1)" />
       </list>
     </recent_temporary>
@@ -145,7 +202,10 @@
       <option name="presentableId" value="Default" />
       <updated>1731063722646</updated>
       <workItem from="1731063723718" duration="6560000" />
-      <workItem from="1731074944059" duration="1223000" />
+      <workItem from="1731074944059" duration="4501000" />
+      <workItem from="1731096313670" duration="1553000" />
+      <workItem from="1731098165584" duration="120000" />
+      <workItem from="1731098305300" duration="2107000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
