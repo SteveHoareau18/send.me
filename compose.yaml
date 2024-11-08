@@ -1,0 +1,116 @@
+
+services:
+  ###> doctrine/doctrine-bundle ###
+  dockerproxy:
+    image: tecnativa/docker-socket-proxy:latest
+    container_name: dockerproxy_sendme
+    environment:
+      CONTAINERS: 1
+      NETWORKS: 1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - socket_docker
+  traefik:
+    image: traefik:latest
+    restart: always
+    container_name: traefik_sendme
+    depends_on:
+      - dockerproxy
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - traefik-public
+      - net-sendme
+      - socket_docker
+    volumes:
+      - "${LETSENCRYPT_DATA_DIR}:/letsencrypt/"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    command:
+      - "--log.level=DEBUG"
+      - "--accessLog.bufferingSize=100"
+      - "--global.sendAnonymousUsage=false"
+      - "--providers.docker=true"
+      - "--providers.docker.network=prod-sendme"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.endpoint=tcp://dockerproxy:2375"
+      - "--providers.docker.watch=true"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--certificatesResolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+      - "--certificatesResolvers.letsencrypt.acme.email=${TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_EMAIL}"
+      - "--certificatesResolvers.letsencrypt.acme.httpChallenge.entrypoint=web"
+  sendme-back:
+    container_name: sendme-back
+    image: "local/sendme-back:latest"
+    build:
+      dockerfile: sendme_back/Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - database
+      - traefik
+    environment:
+      APP_KEY: 'base64:VDjFZGfLFfJHSENXBNdOF8Lv1xrIY3tCCZis0lIN0h0='
+      APP_NAME: "sendme"
+      DB_PORT: "5432"
+      DB_DATABASE: "sendme-db"
+      DB_USERNAME: "app"
+      DB_PASSWORD: "!ChangeMe!"
+      DB_CONNECTION: "pgsql"
+      APP_ENV: "local"
+      APP_DEBUG: "true"
+      APP_SECURE: "false"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.sm-web.rule=Host(`${APP_HOSTNAME}`)"
+      - "traefik.http.routers.app-web.entrypoints=web"
+      - "traefik.http.routers.app-web.middlewares=appredirect"
+      - "traefik.http.routers.app-websecured.rule=Host(`${APP_HOSTNAME}`)"
+      - "traefik.http.routers.app-websecured.entrypoints=websecure"
+      - "traefik.http.routers.app-websecured.tls=true"
+      - "traefik.http.middlewares.appredirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.app-web.tls.certresolver=${CERT_RESOLVER}"
+      - "traefik.http.services.app-web.loadbalancer.server.port=80"
+    networks:
+      net-sendme:
+        aliases:
+          - app-status
+    dns:
+      - 1.1.1.1
+      - 1.0.0.1
+    volumes:
+      - ${PATH}\sendme_back:/home/back
+  database:
+    container_name: sendme_db
+    image: postgres:${POSTGRES_VERSION:-16}-alpine
+    environment:
+      POSTGRES_DB: "sendme-db"
+      # You should definitely change the password in production
+      POSTGRES_PASSWORD: "!ChangeMe!"
+      POSTGRES_USER: "app"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-d", "${POSTGRES_DB:-app}", "-U", "${POSTGRES_USER:-app}"]
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+    volumes:
+      - database_data:/var/lib/postgresql/data:rw
+    networks:
+      - net-sendme
+      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
+      # - ./docker/db/data:/var/lib/postgresql/data:rw
+###< doctrine/doctrine-bundle ###
+networks:
+  net-sendme:
+  socket_docker:
+  traefik-public:
+    external: true
+
+volumes:
+  ###> doctrine/doctrine-bundle ###
+  database_data:
+###< doctrine/doctrine-bundle ###
