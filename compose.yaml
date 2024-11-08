@@ -43,11 +43,11 @@ services:
       - "--certificatesResolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
       - "--certificatesResolvers.letsencrypt.acme.email=${TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_EMAIL}"
       - "--certificatesResolvers.letsencrypt.acme.httpChallenge.entrypoint=web"
-  sendme-front:
-    container_name: sendme-front
-    image: "local/sendme-front:latest"
+  sendme-back:
+    container_name: sendme-back
+    image: "local/sendme-back:latest"
     build:
-      dockerfile: Dockerfile
+      dockerfile: back/Dockerfile
     ports:
       - "8080:80"
     depends_on:
@@ -83,7 +83,7 @@ services:
       - 1.1.1.1
       - 1.0.0.1
     volumes:
-      - ${PATH}\sendme:/home/back
+      - ${PATH}\sendme\back:/home/back
   database:
     container_name: sendme_db
     image: postgres:${POSTGRES_VERSION:-16}-alpine
