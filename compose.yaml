@@ -47,7 +47,7 @@ services:
     container_name: sendme-back
     image: "local/sendme-back:latest"
     build:
-      dockerfile: back/Dockerfile
+      dockerfile: sendme_back/Dockerfile
     ports:
       - "8080:80"
     depends_on:
@@ -83,7 +83,7 @@ services:
       - 1.1.1.1
       - 1.0.0.1
     volumes:
-      - ${PATH}\sendme\back:/home/back
+      - ${PATH}\sendme_back:/home/back
   database:
     container_name: sendme_db
     image: postgres:${POSTGRES_VERSION:-16}-alpine
