@@ -4,5 +4,5 @@ Prérequis:
 - [ ] Modifiez le fichier .env avec vos informations
 
 Vous pouvez maintenant lancer le `docker compose build` puis `docker compose up` !
-Le backend se trouve sur l'url http://localhost:8000
-Le frontend se trouve sur l'url http://localhost:3000
+- Le backend se trouve sur l'url http://localhost:8000
+- Le frontend se trouve sur l'url http://localhost:3000
