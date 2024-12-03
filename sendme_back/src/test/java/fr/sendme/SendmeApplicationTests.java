@@ -1,4 +1,4 @@
-package src.test.java.fr.sendme;
+package fr.sendme;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
