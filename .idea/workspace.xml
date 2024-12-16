@@ -4,21 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ccc3017-9643-413f-86ce-b3e0e31e488b" name="Changes" comment="add READ.ME">
-      <change afterPath="$PROJECT_DIR$/sendme_front/Dockerfile" afterDir="false" />
+    <list default="true" id="9ccc3017-9643-413f-86ce-b3e0e31e488b" name="Changes" comment="New send.me env docker with ssh remote connexion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sendme_back/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sendme_back/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sendme_back/src/main/java/fr/sendme/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/src/main/java/fr/sendme/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sendme_back/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendme_front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendme_front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendme_front/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_front/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendme_front/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_front/src/index.css" afterDir="false" />
     </list>
     <list id="2ec32195-52ac-4cb7-8152-d4b21f6ddc1e" name="Changes by nassi" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
@@ -35,8 +38,25 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/jwt-authentication" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "SIZUUKA"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/SteveHoareau18/send.me.git",
+    "accountId": "b6df8c84-0efe-4e21-b372-c3a9bcfdb2f6"
+  }
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -70,14 +90,15 @@
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
+    "RunOnceActivity.CMTMigration_001": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.SendmeApplication (1).executor": "Run",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "feature/sendme__env",
     "jdk.selected.JAVA_MODULE": "corretto-21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/hoare/Desktop/sendme/sendme_front",
+    "last_opened_file_path": "C:/Users/safae/Desktop/Nouveau dossier (2)/send.me/send.me_env",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -139,14 +160,14 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.compose.yaml: Compose Deployment" />
-        <item itemvalue="Spring Boot.SendmeApplication (1)" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PS-242.23339.16" />
+        <option value="bundled-php-predefined-a98d8de5180a-90914f2295cb-com.jetbrains.php.sharedIndexes-PS-242.23339.16" />
       </set>
     </attachedChunks>
   </component>
@@ -160,6 +181,7 @@
       <updated>1731063722646</updated>
       <workItem from="1731063723718" duration="6560000" />
       <workItem from="1731074944059" duration="1223000" />
+      <workItem from="1734032259664" duration="227000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -185,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731071905589</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="New send.me env docker with ssh remote connexion">
+      <option name="closed" value="true" />
+      <created>1734032364318</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734032364318</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +225,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init" />
     <MESSAGE value="add READ.ME" />
-    <option name="LAST_COMMIT_MESSAGE" value="add READ.ME" />
+    <MESSAGE value="New send.me env docker with ssh remote connexion" />
+    <option name="LAST_COMMIT_MESSAGE" value="New send.me env docker with ssh remote connexion" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
