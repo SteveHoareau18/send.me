@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/back/sendme_back.iml" filepath="$PROJECT_DIR$/back/sendme_back.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../sendme_front.iml" filepath="$PROJECT_DIR$/../sendme_front.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring.main.iml" />
     </modules>
   </component>
 </project>
