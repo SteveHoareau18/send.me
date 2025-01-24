@@ -1,6 +1,6 @@
-spring.application.name=send.me
-server.port=8005
-spring.datasource.url=jdbc:postgres://sendme_db:5436/${POSTGRES_DB}
+spring.application.name=sendme
+server.port=8000
+spring.datasource.url=jdbc:postgresql://sendme_db:5432/${POSTGRES_DB}
 spring.datasource.username=${POSTGRES_USER}
 spring.datasource.password=${POSTGRES_PASSWORD}
 spring.jpa.hibernate.ddl-auto=create-drop
