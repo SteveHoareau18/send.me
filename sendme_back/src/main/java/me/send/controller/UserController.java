@@ -42,6 +42,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
         List<UserResponse> users = userService.allUsers();
+        //test
 
         return ResponseEntity.ok(users);
     }
