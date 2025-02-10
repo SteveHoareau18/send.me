@@ -36,3 +36,6 @@ out/
 ### VS Code ###
 .vscode/
 .env
+app-token.sh
+env.sh
+/home/send.me/sendme_back/src/main/resources/application.properties
