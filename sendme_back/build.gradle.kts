@@ -28,6 +28,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-devtools")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.4")
+    implementation("jakarta.validation:jakarta.validation-api:3.1.1")
     implementation("io.jsonwebtoken:jjwt-api:0.12.6")
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.12.6")
