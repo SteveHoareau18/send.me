@@ -28,13 +28,6 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-        PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
-        configurer.setLocation(new FileSystemResource("/home/send.me/sendme_back/.env"));
-        return configurer;
-    }
-
-    @Bean
     BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
