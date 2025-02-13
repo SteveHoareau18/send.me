@@ -35,7 +35,6 @@ public class SecurityConfiguration {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        // Autorise l'accès aux endpoints d'authentification et Swagger
                         .requestMatchers("/auth/**", "/swagger-ui/**", "/api-docs/**").permitAll()
                         .anyRequest().authenticated()
                 )
