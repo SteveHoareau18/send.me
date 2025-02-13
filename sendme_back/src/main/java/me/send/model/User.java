@@ -23,7 +23,10 @@ public class User implements UserDetails {
     private Integer id;
 
     @Column(nullable = false)
-    private String fullName;
+    private String firstName;
+
+    @Column(nullable = false)
+    private String name;
 
     @Column(nullable = false, unique = true)
     private String username;

@@ -10,7 +10,9 @@ import java.util.Date;
 @Setter
 @Getter
 public class UserResponse {
-    private String fullName;
+    private int id;
+    private String firstName;
+    private String name;
     private String username;
     private String email;
     private Date createdAt;
