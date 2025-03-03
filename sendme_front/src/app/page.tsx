@@ -7,23 +7,25 @@ import Sidebar from "../components/Sidebar";
 export default function HomePage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isClient, setIsClient] = useState(false); // ✅ Empêche le SSR de casser le rendu
     const router = useRouter();
 
     useEffect(() => {
-        // Vérifier si un utilisateur est stocké dans localStorage
-        const user = localStorage.getItem("user");
+        setIsClient(true); // On attend que le client soit chargé
+        if (typeof window !== "undefined") { // Vérification de `window`
+            const user = localStorage.getItem("user");
 
-        if (user) {
-            try {
-                const parsedUser = JSON.parse(user);
-                // Vérifier si un token ou userId est présent (critère d'authentification)
-                if (parsedUser.token || parsedUser.userId) {
-                    setIsAuthenticated(true);
-                    setIsSidebarOpen(true);
+            if (user) {
+                try {
+                    const parsedUser = JSON.parse(user);
+                    if (parsedUser.token || parsedUser.userId) {
+                        setIsAuthenticated(true);
+                        setIsSidebarOpen(true);
+                    }
+                } catch (error) {
+                    console.error("Erreur de parsing du localStorage:", error);
+                    localStorage.removeItem("user"); // Nettoyage en cas d'erreur
                 }
-            } catch (error) {
-                console.error("Erreur de parsing du localStorage:", error);
-                localStorage.removeItem("user"); // Nettoyage en cas d'erreur
             }
         }
     }, []);
@@ -48,7 +50,7 @@ export default function HomePage() {
             {/* Contenu principal */}
             <div className="flex">
                 <FileUpload />
-                {isAuthenticated && (
+                {isAuthenticated && isClient && ( // ✅ On affiche le Sidebar uniquement après le montage
                     <div className="ml-16">
                         <Sidebar setIsSidebarOpen={setIsSidebarOpen} />
                     </div>
