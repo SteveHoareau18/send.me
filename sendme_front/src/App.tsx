@@ -25,7 +25,7 @@ function App() {
                 href="/Login"
                 className="px-6 mr-2 py-3 bg-white text-indigo-600 font-medium text-lg rounded-lg shadow-md hover:bg-gray-100 transition duration-300"
               >
-                Connexion
+                Connexions
               </a>
               <a
                 href="/Register"

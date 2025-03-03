@@ -8,7 +8,7 @@ function Login() {
     e.preventDefault();
     console.log('Email:', email);
     console.log('Password:', password);
-    // Ajoutez ici votre logique de connexion
+    //je devrais ajouter ici la logique de connexion avec l'API
   };
 
   function login() {
@@ -18,7 +18,7 @@ function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center mb-6">Connexion</h2>
+        <h2 className="text-2xl font-bold text-center mb-6">Connexion1</h2>
         <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700">Email</label>

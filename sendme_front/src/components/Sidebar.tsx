@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 
 // @ts-ignore
+
+
 export default function Sidebar({ setIsSidebarOpen }) {
     const [isOpen, setIsOpen] = useState(true);
 
