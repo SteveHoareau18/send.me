@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Niconne&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Mulish', sans-serif;
+}
+
+.custom-font-niconne {
+  font-family: "Niconne", serif;
+}
+
+.custom-background {
+    background-position: 40vw center, 0 0;
+    background-size: 50vw, 100vw 100vh;
+    background-repeat: no-repeat, no-repeat;
+
+    @media (max-width: 1024px) {
+        background-position: 33vw center, 0 0;
+        background-size: 800px, 100vw 100vh;
+    }
+}
