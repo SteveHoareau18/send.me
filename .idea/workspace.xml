@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="365129c6-f125-4ae9-8256-c8092093a60f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sendme_back/src/main/java/me/send/config/ApplicationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/src/main/java/me/send/config/ApplicationConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sendme_back/src/main/java/me/send/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/src/main/java/me/send/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sendme_back/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendme_back/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/sendme_back/gradlew" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="7af794c0d471a5394ffe04cf386e1e2405782a01" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,6 +70,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2qTnYOwr8hdHe4hCUo6YdtqcNpB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -85,7 +88,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "#37 on Rebasing feature/FileEntity",
+    "git-widget-placeholder": "7af794c0",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/nassi/IdeaProjects/send.me/sendme_back",
     "node.js.detected.package.eslint": "true",
