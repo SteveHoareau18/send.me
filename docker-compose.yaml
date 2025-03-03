@@ -1,40 +1,50 @@
 services:
   sendme_front:
-    image: node:22-alpine
+    image: node:20-alpine
     container_name: sendme_front
     volumes:
       - ./sendme_front:/app
+      - ./sendme_front/node_modules:/app/node_modules
+      - ./sendme_front/build:/app/build
+      - "./sendme_front/.next:/app/.next"
     ports:
       - "3000:3000"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    working_dir: "/app"
     stdin_open: true
     tty: true
-    restart: always
-    working_dir: "/app"
     command: >
-      sh -c "npm i && npm run build && npm run watch"
-    links:
-      - sendme_back
-    depends_on:
-      - sendme_back
+      sh -c "npm i && npm run dev"
+    # links:
+    #   - sendme_back
+    # depends_on:
+    #   - sendme_back
   sendme_back:
     image: eclipse-temurin:23-jdk
     container_name: sendme_back
     volumes:
       - ./sendme_back:/app
-      - ~/.gradle:/home/gradle/.gradle
+      - ./.gradle:/home/gradle/.gradle
     ports:
       - "8000:8000"
       - "5005:5005"
+      - "2222:22"
+    user: root
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
       - SPRING_PROFILES_ACTIVE=dev
       - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n
     working_dir: "/app"
-    command: > 
-      sh -c "./gradlew build --daemon && ./gradlew bootRun --continuous"
+    command: >
+      sh -c "apt update && apt install -y openssh-server &&
+           mkdir -p /var/run/sshd &&
+           echo 'root:root' | chpasswd &&
+           sed -i 's/^#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config &&
+           sed -i 's/^#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config &&
+           service ssh restart &&
+           ./gradlew build && ./gradlew bootRun --continuous"
     links:
       - sendme_db
     depends_on:
