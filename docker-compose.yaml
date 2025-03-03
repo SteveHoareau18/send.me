@@ -6,7 +6,7 @@ services:
       - ./sendme_front:/app
       - ./sendme_front/node_modules:/app/node_modules
       - ./sendme_front/build:/app/build
-      - "./sendme_front/.next:/app/.next"
+      - ./sendme_front/.next:/app/.next
     ports:
       - "3000:3000"
     extra_hosts:
@@ -25,11 +25,13 @@ services:
     # depends_on:
     #   - sendme_back
   sendme_back:
-    image: eclipse-temurin:23-jdk
+    image: eclipse-temurin:23-jdk-alpine
     container_name: sendme_back
     volumes:
       - ./sendme_back:/app
-      - ./.gradle:/home/gradle/.gradle
+      - ./sendme_back/.gradle:/home/gradle/.gradle
+      - ./sendme_back/gradle:/app/gradle
+      - ./sendme_back/build:/app/build
     ports:
       - "8000:8000"
       - "5005:5005"
@@ -42,13 +44,7 @@ services:
       - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n
     working_dir: "/app"
     command: >
-      sh -c "apt update && apt install -y openssh-server &&
-           mkdir -p /var/run/sshd &&
-           echo 'root:root' | chpasswd &&
-           sed -i 's/^#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config &&
-           sed -i 's/^#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config &&
-           service ssh restart &&
-           ./gradlew build && ./gradlew bootRun --continuous"
+      sh -c "./gradlew build && ./gradlew bootRun --continuous"
     links:
       - sendme_db
     depends_on:
