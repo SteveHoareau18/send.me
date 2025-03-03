@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-243.24978.46">
+    <data-source name="sendme_db@localhost" uuid="f1fbd9a2-e5e1-43a9-b632-b3c2f97b9062">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <user-name>sendme</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
