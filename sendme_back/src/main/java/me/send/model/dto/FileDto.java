@@ -1,12 +1,17 @@
-package me.send.model.dto;
+    package me.send.model.dto;
 
-import java.time.LocalDateTime;
-import java.util.UUID;
+    import java.time.LocalDateTime;
+    import java.util.UUID;
 
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToOne;
+    import jakarta.persistence.FetchType;
+    import jakarta.persistence.ManyToOne;
+    import lombok.Getter;
+    import lombok.Setter;
+    import me.send.model.User;
 
-public class FileDto {
-    private Integer senderId;
-    private Boolean isPrivate;
-}
+    @Getter
+    @Setter
+    public class FileDto {
+        private Boolean isPrivate;
+        private String name;
+    }
