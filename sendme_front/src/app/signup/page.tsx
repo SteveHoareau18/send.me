@@ -27,16 +27,6 @@ export default function SignupPage() {
         },
         {
             title: "Créer un compte",
-            label: "Saisissez vos informations générales",
-            fields: [
-                { name: "Jours", type: "number", validationTypes: ["required", "number"] },
-                { name: "Mois", type: "select", options: ["Janvier", "Février", "Mars", "Avril",
-                        "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"], validationTypes: ["required"] },
-                { name: "An", type: "text", validationTypes: ["required", "number", "minYear"] },
-            ],
-        },
-        {
-            title: "Créer un compte",
             label: "Saisissez vos identifiants de connexion",
             fields: [
                 { name: "Email", type: "email", validationTypes: ["required", "email"] },
@@ -47,7 +37,7 @@ export default function SignupPage() {
     ];
 
     // pour géerer l'inscription
-    const handleSignup = async () => {
+    const handleSignup = async (formData) => {
         console.log("handleSignup() déclenché "); //on test
 
         setError("");
@@ -56,6 +46,8 @@ export default function SignupPage() {
             setError("Les mots de passe ne correspondent pas.");
             return;
         }
+
+        console.log(formData);
 
         try {
             const response = await axios.post("http://localhost:8000/auth/signup", {
@@ -91,15 +83,8 @@ export default function SignupPage() {
 
             {/* Formulaire d'inscription */}
             <div className="w-2/5">
-                <Stepper steps={steps} />
+                <Stepper steps={steps} onSubmit={handleSignup}/>
                 {error && <p className="text-red-500 text-center mt-4">{error}</p>} {/* ✅ Affichage des erreurs */}
-
-                <button
-                    className="bg-blue-600 text-white w-full py-2 mt-4 rounded-lg hover:bg-blue-700"
-                    onClick={handleSignup}
-                >
-                    S'inscrire
-                </button>
             </div>
         </div>
     );

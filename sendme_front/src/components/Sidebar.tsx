@@ -5,6 +5,7 @@ import React, {useState} from 'react';
 
 export default function Sidebar({ setIsSidebarOpen }) {
     const [isOpen, setIsOpen] = useState(true);
+    const [userInfo, setUserInfo] = useState({});
 
     return (
         <div className={`fixed top-0 right-0 h-full bg-white dark:bg-gray-900 shadow-lg p-4 rounded-tl-lg text-black dark:text-white transition-all duration-300 ${isOpen ? "translate-x-0 w-80" : "w-16 p-2"}`}>
@@ -21,7 +22,7 @@ export default function Sidebar({ setIsSidebarOpen }) {
                 <div className={`transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0 hidden"}`}>
                     <div className="flex items-center space-x-2 mb-4">
                         <div className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
-                        <p className="font-semibold">Andrew Smith</p>
+                        <p className="font-semibold">test</p>
                     </div>
                     <h3 className="text-md font-semibold mb-2">Derniers fichiers reçus</h3>
                     <ul className="space-y-2">

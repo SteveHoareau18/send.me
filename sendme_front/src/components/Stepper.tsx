@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 // Définition des types de validation
+// @ts-ignore
 const validators = {
     name: (value) => /^[A-Za-zÀ-ÿ '-]+$/.test(value) || "Veuillez entrer un nom valide",
     number: (value) => /^[0-9]+$/.test(value) || "Veuillez entrer un nombre valide",
@@ -26,7 +27,7 @@ const validateField = (value, validationTypes, formData) => {
     return true;
 };
 
-export default function Stepper({ steps }) {
+export default function Stepper({ steps, onSubmit }) {
     const [step, setStep] = useState(0);
     const [formData, setFormData] = useState({});
     const [errors, setErrors] = useState({});
@@ -56,6 +57,7 @@ export default function Stepper({ steps }) {
                 setStep(step + 1);
             } else {
                 console.log("Envoi des données:", JSON.stringify(formData));
+                onSubmit(formData);
             }
         }
     };

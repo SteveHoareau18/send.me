@@ -1,14 +1,32 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect, use} from "react";
 import { useRouter } from "next/navigation";
 import FileUpload from "../components/FileUpload";
 import Sidebar from "../components/Sidebar";
+import axios from "axios";
 
 export default function HomePage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isClient, setIsClient] = useState(false); // ✅ Empêche le SSR de casser le rendu
     const router = useRouter();
+    const clientInfo = useState(false);
+    const [userInfo, setUserInfo] = useState({});
+
+    const getUserInfo = async (parsedUser) =>{
+        try {
+            const response = await axios.get("http://localhost:8000/users/me", {
+                headers: {
+                    Authorization: `Bearer ${parsedUser.token}`
+                },
+            });
+
+            console.log("Réponse API :", response.status, response.data);
+            setUserInfo(response.data);
+        } catch (err) {
+            console.error("Erreur :", err);
+        }
+    }
 
     useEffect(() => {
         setIsClient(true); // On attend que le client soit chargé
@@ -21,6 +39,7 @@ export default function HomePage() {
                     if (parsedUser.token || parsedUser.userId) {
                         setIsAuthenticated(true);
                         setIsSidebarOpen(true);
+                        getUserInfo(parsedUser);
                     }
                 } catch (error) {
                     console.error("Erreur de parsing du localStorage:", error);

@@ -2,6 +2,7 @@
 
     import me.send.model.File;
     import me.send.model.User;
+    import me.send.model.repository.FileRepository;
     import me.send.service.FileService;
     import org.springframework.http.MediaType;
     import org.springframework.http.ResponseEntity;
@@ -15,15 +16,20 @@
     import java.nio.file.Files;
     import java.nio.file.Path;
     import java.nio.file.Paths;
+    import java.util.List;
+    import java.util.stream.Collectors;
+    import java.util.stream.StreamSupport;
 
     @RestController
     @RequestMapping("/files")
     public class FileController {
 
         private final FileService fileService;
+        private final FileRepository fileRepository;
 
-        public FileController(FileService fileService) {
+        public FileController(FileService fileService, FileRepository fileRepository) {
             this.fileService = fileService;
+            this.fileRepository = fileRepository;
         }
 
         @PostMapping(path = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -47,6 +53,19 @@
 
             return ResponseEntity.ok(file);
         }
+
+        @GetMapping("")
+        public ResponseEntity<List<File>> getFiles() {
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            User currentUser = (User) authentication.getPrincipal();
+
+            List<File> files = StreamSupport
+                    .stream(fileRepository.findBySenderId(currentUser.getId()).spliterator(), false)
+                    .collect(Collectors.toList());
+
+            return ResponseEntity.ok(files);
+        }
+
         @GetMapping("/{id}/download")
         public ResponseEntity<org.springframework.core.io.Resource> downloadFile(@PathVariable("id") Integer fileId) throws IOException, IOException {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

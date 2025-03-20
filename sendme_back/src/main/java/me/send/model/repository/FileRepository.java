@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface FileRepository extends CrudRepository<File, Integer> {
     // Récuperer la liste des fichiers pour un user id
-    List<File> findBySenderId(Integer senderId);
+    Iterable<File> findBySenderId(Integer senderId);
 }
