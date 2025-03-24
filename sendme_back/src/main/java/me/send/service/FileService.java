@@ -9,17 +9,19 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Service
 public class FileService {
 
+    private final FileRepository fileRepository;
     @Value("${app.upload.dir:uploads}")
     private String uploadDir;
-
-    private final FileRepository fileRepository;
 
     public FileService(FileRepository fileRepository) {
         this.fileRepository = fileRepository;
@@ -77,10 +79,16 @@ public class FileService {
 
         return fileRepository.save(file);
     }
+
     public File getFileById(Integer fileId) {
         return fileRepository.findById(fileId)
                 .orElseThrow(() -> new RuntimeException("File non trouvé avec l'id : " + fileId));
     }
+
+    public File getFileByRepository(String uuid) {
+        return fileRepository.findByFilePathLike(uuid);
+    }
+
     public void deleteFile(Integer fileId, User currentUser) {
         File file = getFileById(fileId);
 

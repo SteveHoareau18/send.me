@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import {create} from "zustand";
 
 interface SidebarState {
     isOpen: boolean;
@@ -7,5 +7,5 @@ interface SidebarState {
 
 export const useSidebarStore = create<SidebarState>((set) => ({
     isOpen: false, // Commence en mode réduit
-    toggleSidebar: () => set((state) => ({ isOpen: !state.isOpen })),
+    toggleSidebar: () => set((state) => ({isOpen: !state.isOpen})),
 }));

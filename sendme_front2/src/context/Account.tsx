@@ -2,7 +2,7 @@
 
 import {Role} from "@/context/Role";
 
-export interface Account{
+export interface Account {
     "id": number,
     "firstName": string,
     "name": string,

@@ -9,4 +9,4 @@ function Logo() {
     )
 }
 
-export { Logo };
+export {Logo};

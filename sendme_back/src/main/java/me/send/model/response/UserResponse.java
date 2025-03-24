@@ -1,8 +1,8 @@
 package me.send.model.response;
 
-import me.send.model.Role;
 import lombok.Getter;
 import lombok.Setter;
+import me.send.model.Role;
 
 import java.util.Collection;
 import java.util.Date;

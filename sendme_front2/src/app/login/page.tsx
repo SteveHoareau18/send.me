@@ -1,16 +1,16 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import {Button} from "@/components/ui/button";
 import {Logo} from "@/components/ui/logo";
 import {useState} from "react";
 import {useRouter} from "next/navigation";
 import {useAuth} from "@/context/AuthContext";
 import Link from "next/link";
-import { isValidEmail } from "@/context/Verificator";
+import {isValidEmail} from "@/context/Verificator";
 
 export default function LoginPage() {
     const router = useRouter();
-    const { loginData, setLoginData } = useAuth();
+    const {loginData, setLoginData} = useAuth();
     const [email, setEmail] = useState(loginData.email || "");
 
     const handleNext = () => {
@@ -18,16 +18,16 @@ export default function LoginPage() {
             return alert("Tous les champs sont obligatoires.");
         }
 
-        if(!isValidEmail(email)){
+        if (!isValidEmail(email)) {
             return alert("Email non valide, il faut que ce soit ce format: xxxxx@xxxxx.xxx");
         }
 
-        setLoginData({ email });
+        setLoginData({email});
         router.push("/login/password");
     };
 
     const resetForm = () => {
-        setLoginData({ email: "" });
+        setLoginData({email: ""});
     }
 
     return (
@@ -48,9 +48,11 @@ export default function LoginPage() {
 
                 <div className="flex justify-between items-center">
                     <Link href="/signup" onClick={resetForm}>
-                        <Button className="bg-blue-800 text-white px-6 py-2 rounded-lg">S&#39;inscrire</Button>
+                        <Button
+                            className="cursor-pointer bg-blue-800 text-white px-6 py-2 rounded-lg">S&#39;inscrire</Button>
                     </Link>
-                    <Button onClick={handleNext} className="bg-blue-600 text-white px-6 py-2 rounded-lg">Suivant</Button>
+                    <Button onClick={handleNext}
+                            className="cursor-pointer bg-blue-600 text-white px-6 py-2 rounded-lg">Suivant</Button>
                 </div>
             </div>
 
