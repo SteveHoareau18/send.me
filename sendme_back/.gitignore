@@ -35,9 +35,5 @@ out/
 
 ### VS Code ###
 .vscode/
-gradle/.tmp
-gradle/caches
-gradle/daemon
-gradle/native
-gradle/wrapper/dists
+.gradle/
 bin
