@@ -6,4 +6,4 @@ WORKDIR /app
 
 COPY . .
 
-CMD ["gradle", "build", "--no-daemon", "--continuous", "&&", "gradle", "bootRun"]
+CMD ["sh", "-c", "gradle build && gradle bootRun"]
